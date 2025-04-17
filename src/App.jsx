@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Link } from "react-router-dom"
 import emailjs from '@emailjs/browser'
