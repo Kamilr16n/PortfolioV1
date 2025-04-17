@@ -20,6 +20,14 @@ What fascinates me most is how we're moving towards more seamless, intuitive use
 One thing I've learned is that the best way to grow is to embrace challenges head-on. Whether it's tackling a complex algorithm or learning a new framework, each challenge is an opportunity to become better at what we do.`,
     tags: ["Personal Growth", "Learning", "Development"],
     category: "Personal"
+  },
+  {
+    id: "3",
+    date: "April 17, 2025",
+    title: "Trying React Native",
+    content: `I have been playing around with React Native for a while now, but I have not been able to get the hang of it. it may seem very a like to react but it is not. I am trying to build a simple app to help me learn React Native wish me luck.`,
+    tags: ["React Native", "Learning", "Development"],
+    category: "Personal"
   }
 ]
 
