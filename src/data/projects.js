@@ -35,7 +35,7 @@ const projects = [
     technologies: ["React Native", "TailwindCSS", "Firebase", "Expo"],
   },
   {
-    id: 1,
+    id: 3,
     title: "wedding place showcase",
     description: "A wedding place showcase website built with React, Node.js.",
     category: "Featured",
