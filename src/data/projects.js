@@ -3,9 +3,9 @@ import browseEvents from "../assets/Ticketster/browseEvents.jpeg";
 import dashboardMobile from "../assets/ManagmentApp/dashboard_mobile.jpg";
 import projectsMobile from "../assets/ManagmentApp/projects mobile.jpg";
 import statisticMobile from "../assets/ManagmentApp/statistic_mobile.jpg";
-import darelfarah from "../assets/weddingPlace/darelfarah.png";
-import darelfarah2 from "../assets/weddingPlace/darelfarah2.png";
-import darelfarah3 from "../assets/weddingPlace/darelfarah3.png";
+import darelfarah from "../assets/weddings/darelfarah.png";
+import darelfarah2 from "../assets/weddings/darelfarah2.png";
+import darelfarah3 from "../assets/weddings/darelfarah3.png";
 
 
 // Project data with multiple images per project
