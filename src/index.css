@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* Base Font Settings */
+html, body, button, input, textarea {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Blog Post Typography */
+.blog-post h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation and Buttons */
+.glass-button {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+              0 1px 3px rgba(0, 0, 0, 0.08),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Date Badge */
+.date-badge {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gridPulse {
+  0% {
+    opacity: 0.05;
+    transform: scale(0.995);
+  }
+  50% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.05;
+    transform: scale(0.995);
+  }
+}
+
+body {
+  background-color: black;
+  color: white;
+  cursor: default;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass-grid-cell {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+  transition: all 0.5s ease-out;
+}
+
+.glass-grid-cell:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 
+              0 3px 6px rgba(0, 0, 0, 0.08),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.glass-button:active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  transform: translateY(1px);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease-out;
+}
+
+.glass-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.ultra-glass-panel {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  animation: panelAppear 0.3s ease-out;
+  isolation: isolate;
+}
+
+.ultra-glass-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 100%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes panelAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.silver-highlight {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  background-size: 200% 200%;
+  animation: silverShine 3s ease infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes silverShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Timeline Styles */
+@keyframes timelinePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+    transform: scale(1.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes timelineGlow {
+  0% {
+    opacity: 0.4;
+    background-position: 0% 50%;
+  }
+  50% {
+    opacity: 1;
+    background-position: 100% 50%;
+  }
+  100% {
+    opacity: 0.4;
+    background-position: 0% 50%;
+  }
+}
+
+.timeline-dot {
+  animation: timelinePulse 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(45deg, #3b82f6, #60a5fa);
+}
+
+.timeline-line {
+  animation: timelineGlow 4s infinite ease-in-out;
+  background: linear-gradient(180deg, 
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(59, 130, 246, 0.6) 50%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+  background-size: 200% 200%;
+}
+
+.timeline-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.timeline-card:hover {
+  transform: scale(1.05) translateY(-5px);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 
+    0 15px 40px -5px rgba(0, 0, 0, 0.3),
+    0 0 20px -5px rgba(59, 130, 246, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.timeline-card:hover::before {
+  left: 100%;
+}
+
+@keyframes floatingCard {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.timeline-card-content {
+  position: relative;
+  z-index: 1;
+  animation: floatingCard 6s ease-in-out infinite;
+}
+
+.timeline-year {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  background: linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.2));
+  border-radius: 9999px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 10px -2px rgba(59, 130, 246, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* Blog Post Styles */
+.blog-post {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.blog-post::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(59, 130, 246, 0.4) 50%,
+    rgba(59, 130, 246, 0.2) 100%
+  );
+  border-radius: 0 8px 8px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.blog-post:hover {
+  transform: translateX(-5px);
+  box-shadow: 
+    0 15px 40px -5px rgba(0, 0, 0, 0.3),
+    0 0 20px -5px rgba(59, 130, 246, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.blog-post:hover::after {
+  opacity: 1;
+}
+
+/* Custom Scrollbar for Blog */
+.blog-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.blog-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.blog-scroll::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.blog-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+/* Blog Post Date Badge */
+.date-badge {
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  background: linear-gradient(45deg, 
+    rgba(59, 130, 246, 0.1),
+    rgba(96, 165, 250, 0.1)
+  );
+  border-radius: 9999px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.date-badge::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .timeline-line {
+    left: 20px !important;
+  }
+
+  .timeline-dot {
+    left: 20px !important;
+  }
+
+  .timeline-card {
+    max-width: calc(100vw - 60px);
+  }
+
+  .glass-grid-cell {
+    opacity: 0.03;
+  }
+
+  .glass-button {
+    backdrop-filter: blur(8px);
+  }
+
+  .ultra-glass-panel {
+    backdrop-filter: blur(12px);
+  }
+
+  .blog-post {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .date-badge {
+    font-size: 0.875rem;
+  }
+
+  /* Improve touch targets on mobile */
+  button, 
+  a, 
+  input, 
+  textarea {
+    min-height: 44px;
+  }
+
+  /* Reduce motion on mobile for better performance */
+  .animate-gradient {
+    animation-duration: 12s;
+  }
+
+  .timeline-dot {
+    animation-duration: 3s;
+  }
+
+  /* Optimize backdrop blur performance on mobile */
+  .glass-panel,
+  .glass-button,
+  .ultra-glass-panel {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Timeline Mobile Layout */
+@media (max-width: 768px) {
+  .timeline-card {
+    width: calc(100% - 40px);
+    margin-left: 40px;
+  }
+
+  [class*="w-1/2"] {
+    width: auto;
+  }
+
+  .timeline-card-content {
+    text-align: left !important;
+    padding-left: 1rem;
+  }
+
+  .timeline-year {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Improve Mobile Grid Layout */
+@media (max-width: 640px) {
+  .grid-cols-12 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .grid-rows-12 {
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+/* Optimize Mobile Touch Interactions */
+@media (hover: none) {
+  .glass-button:hover,
+  .glass-panel:hover,
+  .timeline-card:hover {
+    transform: none;
+  }
+
+  .blog-post:hover {
+    transform: none;
+  }
+
+  .glass-button:active,
+  .glass-panel:active,
+  .timeline-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Reduce Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Line Clamp Utilities */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
