@@ -23,23 +23,23 @@ const ProjectsSection = () => {
   return (
     <motion.section
       id="projects"
-      className="min-h-screen px-4 py-32"
+      className="min-h-screen px-2 sm:px-4 py-20 sm:py-32"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true, margin: "-100px" }}
     >
-      <h2 className="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-white">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-white">
         My Projects
       </h2>
       
       {/* Gallery description */}
-      <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12">
+      <p className="text-gray-300 text-center max-w-2xl mx-auto mb-8 sm:mb-12 text-sm sm:text-base">
         A showcase of my recent work. Click on a project to view the gallery and learn more about the design and development process.
       </p>
 
       {/* Projects grid */}
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         {projects.map((project, index) => (
           <ProjectCard
             key={project.id}

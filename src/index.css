@@ -483,6 +483,37 @@ body {
   .ultra-glass-panel {
     background: rgba(255, 255, 255, 0.08);
   }
+
+  /* Improve swipe gesture detection for gallery */
+  .ultra-glass-panel img {
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+  }
+  
+  /* Ensure project cards are easily tappable */
+  .glass-panel {
+    transform: none !important;
+    transition: transform 0.2s ease-out;
+  }
+  
+  .glass-panel:active {
+    transform: scale(0.98) !important;
+  }
+  
+  /* Ensure all interactive elements have proper touch targets */
+  button, 
+  a, 
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Ensure text is readable on smaller devices */
+  .text-xs {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
 }
 
 /* Timeline Mobile Layout */
@@ -569,5 +600,17 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Improve loading performance for images */
+img {
+  content-visibility: auto;
+}
+
+/* Fix for iOS Safari vh issue */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
 }
 
