@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Link } from "react-router-dom"
 import emailjs from '@emailjs/browser'
@@ -510,6 +511,7 @@ Today, I create modern, user-friendly, and visually engaging digital experiences
           </div>
         </div>
       )}
+      <SpeedInsights />
     </div>
   )
 }
